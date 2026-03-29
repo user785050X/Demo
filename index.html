@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Мой сайт</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #3b82f6, #9333ea);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      width: 300px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #2563eb;
+    }
+
+    input {
+      margin-top: 10px;
+      padding: 8px;
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="card">
+  <h2>🚀 Демонстрация</h2>
+
+  <button onclick="clickMe()">Нажми (0)</button>
+
+  <div>
+    <input oninput="changeText(this.value)" placeholder="Напиши что-нибудь">
+    <p id="text"></p>
+  </div>
+</div>
+
+<script>
+let count = 0;
+
+function clickMe() {
+  count++;
+  document.querySelector("button").innerText = "Нажми (" + count + ")";
+}
+
+function changeText(value) {
+  document.getElementById("text").innerText = "Ты написал: " + value;
+}
+</script>
+
+</body>
+</html>
